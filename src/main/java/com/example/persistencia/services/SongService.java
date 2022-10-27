@@ -25,10 +25,14 @@ public class SongService {
         if(songRepository.existsById(songInputDto.getSongId())) throw new SongAlreadyExists("Song already exists.");
 
     }
-    public void changeFavouriteSong(String songId,SongUpdateDto songUpdateDto) throws SongDoesNotExist {
+    public void changeFavouriteSong(String songId) throws SongDoesNotExist {
         if (!songRepository.existsById(songId)) throw new SongDoesNotExist("Song doesn´t exist.");
         Song song = songRepository.getOne(songId);
-        Song sUpdate = songUpdateDto.toDomain(songId, song.getTitle(), song.getArtistId());
-        songRepository.save(sUpdate);
+        if(song.isFavourite()){
+            song.setFavourite(false);
+        }else{
+            song.setFavourite(true);
+        }
+        songRepository.save(song);
     }
 }

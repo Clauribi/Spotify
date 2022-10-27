@@ -34,9 +34,9 @@ public class SongController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
     @PutMapping("/song/{songId}/favourite")
-    public  ResponseEntity<SongInputDto> markFavouriteSong(@PathVariable String songId, @RequestBody SongUpdateDto songUpdateDto){
+    public  ResponseEntity<SongInputDto> markFavouriteSong(@PathVariable String songId){
         try{
-            songService.changeFavouriteSong(songId, songUpdateDto);
+            songService.changeFavouriteSong(songId);
         } catch (SongDoesNotExist e){
             e.printStackTrace();
             return ResponseEntity.badRequest().build();
