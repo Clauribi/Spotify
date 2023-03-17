@@ -1,22 +1,21 @@
-package com.example.persistencia.domain;
+package api.spotify.controller.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import api.spotify.domain.Artist;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-@Entity(name="artists")
-public class Artist {
-    @Id
+public class ArtistInputDto {
     private String id;
     @NotNull(message = "Name is null")
     @NotBlank(message = "Name is empty")
     private String name;
 
-    public Artist() {
+
+    public ArtistInputDto() {
     }
 
-    public Artist(String id, String name) {
+    public ArtistInputDto(String id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -35,5 +34,10 @@ public class Artist {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Artist toDomain(){
+
+        return new Artist(this.id, this.name);
     }
 }

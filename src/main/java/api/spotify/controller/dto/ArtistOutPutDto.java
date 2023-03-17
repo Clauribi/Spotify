@@ -1,6 +1,6 @@
-package com.example.persistencia.controller.dto;
+package api.spotify.controller.dto;
 
-import com.example.persistencia.domain.Song;
+import api.spotify.domain.Song;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

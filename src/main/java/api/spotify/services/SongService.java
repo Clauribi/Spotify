@@ -1,13 +1,12 @@
-package com.example.persistencia.services;
+package api.spotify.services;
 
-import com.example.persistencia.controller.dto.SongInputDto;
-import com.example.persistencia.controller.dto.SongUpdateDto;
-import com.example.persistencia.domain.Song;
-import com.example.persistencia.domain.exceptions.ArtistDoesNotExist;
-import com.example.persistencia.domain.exceptions.SongAlreadyExists;
-import com.example.persistencia.domain.exceptions.SongDoesNotExist;
-import com.example.persistencia.repositories.ArtistRepository;
-import com.example.persistencia.repositories.SongRepository;
+import api.spotify.domain.Song;
+import api.spotify.domain.exceptions.ArtistDoesNotExist;
+import api.spotify.domain.exceptions.SongAlreadyExists;
+import api.spotify.domain.exceptions.SongDoesNotExist;
+import api.spotify.repositories.ArtistRepository;
+import api.spotify.repositories.SongRepository;
+import api.spotify.controller.dto.SongInputDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

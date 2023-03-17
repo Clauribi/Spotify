@@ -1,6 +1,6 @@
-package com.example.persistencia.repositories;
+package api.spotify.repositories;
 
-import com.example.persistencia.domain.Song;
+import api.spotify.domain.Song;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

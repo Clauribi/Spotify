@@ -1,4 +1,4 @@
-package com.example.persistencia;
+package api.spotify;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
